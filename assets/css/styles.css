@@ -1,0 +1,144 @@
+/* Custom CSS Styles */
+:root {
+    --primary-blue: #0c5191;
+    --secondary-blue: #3B82F6;
+    --accent-green: #10B981;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+}
+
+/* Custom Navigation Styles */
+.navbar {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background-color: rgba(37, 99, 235, 0.9);
+    padding: 1rem 0;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Header Animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header {
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue), #1E3A8A);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+    padding: 5rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+}
+
+/* Service Card Hover Effects */
+.service-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Subtle Parallax Effect */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* WhatsApp Button Pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.whatsapp-btn {
+    background-color: #34D399;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-btn:hover {
+    background-color: #10B981;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1E3A8A;
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.company-info {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.company-info strong {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    .header h2 { font-size: 2.5rem; }
+    .header p { font-size: 1.25rem; }
+}
